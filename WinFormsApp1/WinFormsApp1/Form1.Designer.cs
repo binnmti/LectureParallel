@@ -36,13 +36,15 @@
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
+            button7 = new Button();
             SuspendLayout();
             // 
             // button1
             // 
-            button1.Location = new Point(37, 42);
+            button1.Location = new Point(53, 70);
+            button1.Margin = new Padding(4, 5, 4, 5);
             button1.Name = "button1";
-            button1.Size = new Size(75, 23);
+            button1.Size = new Size(107, 38);
             button1.TabIndex = 0;
             button1.Text = "button1";
             button1.UseVisualStyleBackColor = true;
@@ -51,9 +53,10 @@
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(319, 47);
+            checkBox1.Location = new Point(456, 78);
+            checkBox1.Margin = new Padding(4, 5, 4, 5);
             checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(83, 19);
+            checkBox1.Size = new Size(121, 29);
             checkBox1.TabIndex = 2;
             checkBox1.Text = "checkBox1";
             checkBox1.UseVisualStyleBackColor = true;
@@ -63,17 +66,19 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "a", "b", "c" });
-            comboBox1.Location = new Point(145, 43);
+            comboBox1.Location = new Point(207, 72);
+            comboBox1.Margin = new Padding(4, 5, 4, 5);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
+            comboBox1.Size = new Size(171, 33);
             comboBox1.TabIndex = 3;
             comboBox1.Click += comboBox1_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(37, 187);
+            button2.Location = new Point(53, 312);
+            button2.Margin = new Padding(4, 5, 4, 5);
             button2.Name = "button2";
-            button2.Size = new Size(75, 23);
+            button2.Size = new Size(107, 38);
             button2.TabIndex = 4;
             button2.Text = "button2";
             button2.UseVisualStyleBackColor = true;
@@ -81,9 +86,10 @@
             // 
             // button3
             // 
-            button3.Location = new Point(145, 187);
+            button3.Location = new Point(207, 312);
+            button3.Margin = new Padding(4, 5, 4, 5);
             button3.Name = "button3";
-            button3.Size = new Size(75, 23);
+            button3.Size = new Size(107, 38);
             button3.TabIndex = 5;
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
@@ -91,9 +97,10 @@
             // 
             // button4
             // 
-            button4.Location = new Point(37, 258);
+            button4.Location = new Point(53, 430);
+            button4.Margin = new Padding(4, 5, 4, 5);
             button4.Name = "button4";
-            button4.Size = new Size(75, 23);
+            button4.Size = new Size(107, 38);
             button4.TabIndex = 6;
             button4.Text = "button4";
             button4.UseVisualStyleBackColor = true;
@@ -101,9 +108,10 @@
             // 
             // button5
             // 
-            button5.Location = new Point(145, 258);
+            button5.Location = new Point(207, 430);
+            button5.Margin = new Padding(4, 5, 4, 5);
             button5.Name = "button5";
-            button5.Size = new Size(75, 23);
+            button5.Size = new Size(107, 38);
             button5.TabIndex = 7;
             button5.Text = "button5";
             button5.UseVisualStyleBackColor = true;
@@ -111,19 +119,32 @@
             // 
             // button6
             // 
-            button6.Location = new Point(37, 345);
+            button6.Location = new Point(53, 575);
+            button6.Margin = new Padding(4, 5, 4, 5);
             button6.Name = "button6";
-            button6.Size = new Size(75, 23);
+            button6.Size = new Size(107, 38);
             button6.TabIndex = 8;
             button6.Text = "button6";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
+            // button7
+            // 
+            button7.Location = new Point(207, 575);
+            button7.Margin = new Padding(4, 5, 4, 5);
+            button7.Name = "button7";
+            button7.Size = new Size(107, 38);
+            button7.TabIndex = 9;
+            button7.Text = "button7";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1143, 750);
+            Controls.Add(button7);
             Controls.Add(button6);
             Controls.Add(button5);
             Controls.Add(button4);
@@ -132,6 +153,7 @@
             Controls.Add(comboBox1);
             Controls.Add(checkBox1);
             Controls.Add(button1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
@@ -148,5 +170,6 @@
         private Button button4;
         private Button button5;
         private Button button6;
+        private Button button7;
     }
 }

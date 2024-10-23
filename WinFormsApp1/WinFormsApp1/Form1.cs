@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace WinFormsApp1
 {
     public partial class Form1 : Form
@@ -27,6 +29,7 @@ namespace WinFormsApp1
         {
             button2.Enabled = false;
             Thread.Sleep(3000);
+            MessageBox.Show("Hello World!");
             button2.Enabled = true;
         }
 
@@ -34,7 +37,8 @@ namespace WinFormsApp1
         {
             button3.Enabled = false;
             Cursor = Cursors.WaitCursor;
-            Thread.Sleep(3000);
+            Thread.Sleep(10000);
+            MessageBox.Show("Hello World!");
             Cursor = Cursors.Default;
             button3.Enabled = true;
         }
@@ -43,7 +47,7 @@ namespace WinFormsApp1
         {
             var thread = new Thread(() =>
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(10000);
                 MessageBox.Show("Hello World!");
             });
             thread.Start();
@@ -54,29 +58,50 @@ namespace WinFormsApp1
             button5.Enabled = false;
             Cursor = Cursors.WaitCursor;
 
-            Task.Run(() =>
+            var thread = new Thread(() =>
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(10000);
                 MessageBox.Show("Hello World!");
-                Invoke(() => {
+                Invoke(() =>
+                {
                     Cursor = Cursors.Default;
                     button5.Enabled = true;
                 });
             });
-
+            thread.Start();
         }
 
         private async void button6_Click(object sender, EventArgs e)
         {
             button6.Enabled = false;
             Cursor = Cursors.WaitCursor;
+
             await Task.Run(() =>
             {
-                Thread.Sleep(3000);
+                Thread.Sleep(10000);
                 MessageBox.Show("Hello World!");
             });
+
             Cursor = Cursors.Default;
             button6.Enabled = true;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Debug.WriteLine($"{i} です。");
+            }
+
+            Parallel.For(0, 10, i =>
+            {
+                Debug.WriteLine($"{i} です。 {Task.CurrentId}");
+            });
+
+            Enumerable.Range(0, 10).ForAll(i =>
+            {
+                Debug.WriteLine($"{i} です。 {Task.CurrentId}");
+            });
         }
     }
 }
