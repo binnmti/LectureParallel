@@ -9,20 +9,20 @@ namespace WinFormsApp1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Thread.Sleep(3000);
-            MessageBox.Show("Hello World!");
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(1000);
         }
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
-            Thread.Sleep(3000);
+            Thread.Sleep(1000);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Thread.Sleep(1000);
+            MessageBox.Show("Hello World!");
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -98,7 +98,7 @@ namespace WinFormsApp1
                 Debug.WriteLine($"{i} です。 {Task.CurrentId}");
             });
 
-            Enumerable.Range(0, 10).ForAll(i =>
+            Enumerable.Range(0, 10).AsParallel().ForAll(i =>
             {
                 Debug.WriteLine($"{i} です。 {Task.CurrentId}");
             });
